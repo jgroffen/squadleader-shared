@@ -1,10 +1,10 @@
-# SuperFriends Shared
+# SquadLeader Shared
 
-**SuperFriends Shared** is the foundational library for a multi‑agent ecosystem built around Copilot CLI and MCP servers.  
+**SquadLeader Shared** is the shared library for a multi‑agent ecosystem.
 It provides a unified collection of reusable **skills**, **templates**, **schemas**, and **utility modules** that are shared across:
 
-- **superfriends-orchestrator** — the orchestrator agent and developer-facing tools  
-- **superfriends-mcp** — the suite of MCP servers and tool implementations  
+- **squadleader** — the orchestrator agent and developer-facing tools  
+- **squadleader-mcp** — the suite of MCP servers and tool implementations  
 - **downstream projects** — any project that includes the orchestrator as a submodule
 
 This repository centralizes all cross‑cutting logic so that agents, MCPs, and development workflows can rely on a single, consistent source of truth.  
@@ -32,26 +32,26 @@ It keeps shared capabilities versioned, maintainable, and easy to consume across
 
 Each folder is intentionally lightweight and framework‑agnostic so it can be imported cleanly by:
 
-- MCP servers in **superfriends-mcp**
-- Orchestrator and agents in **superfriends-orchestrator**
+- Orchestrator and agents in **squadleader**
+- MCP servers in **squadleader-mcp**
 - Any downstream project that includes the orchestrator as a submodule
 
 ---
 
 ## 🔗 How It Fits Into the Ecosystem
 
-`superfriends-shared` is designed to be included as a **git submodule** in both:
+`squadleader-shared` is designed to be included as a **git submodule** in both:
 
-- `superfriends-orchestrator`
-- `superfriends-mcp`
+- `squadleader`
+- `squadleader-mcp`
 
 This ensures a single source of truth for shared logic while keeping the architecture modular and maintainable.
 
-### Multi‑Repo SuperFriends Architecture
+### Multi‑Repo SquadLeader Architecture
 
 ```
                  ┌──────────────────────────────┐
-                 │      superfriends-shared     │
+                 │      squadleader-shared      │
                  │  (skills, templates, utils)  │
                  └──────────────┬───────────────┘
                                 │
@@ -59,7 +59,7 @@ This ensures a single source of truth for shared logic while keeping the archite
                 │                                │
                 ▼                                ▼
    ┌──────────────────────────┐    ┌──────────────────────────┐
-   │ superfriends-orchestrator│    │     superfriends-mcp     │
+   │        squadleader       │    │     squadleader-mcp      │
    │  (orchestrator agents,   │    │  (MCP servers + tools)   │
    │   orchestration skills)  │    │                          │
    └────────────┬─────┬───────┘    └─────────────┬────────────┘
@@ -79,4 +79,4 @@ This ensures a single source of truth for shared logic while keeping the archite
 
 ## 📄 License
 
-TBD
+MIT
