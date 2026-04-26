@@ -4,12 +4,28 @@
 
 BASHRC_FILE="$HOME/.bashrc"
 ALIAS_LINE="alias yolo='copilot --yolo'"
+EXPORT_OPENSPEC_TELEMETRY_LINE="export OPENSPEC_TELEMETRY=0"
+EXPORT_DNT_LINE="export DO_NOT_TRACK=1"
 
 if grep -Fxq "$ALIAS_LINE" "$BASHRC_FILE"; then
     echo "✓ yolo alias already exists in $BASHRC_FILE"
 else
     echo "$ALIAS_LINE" >> "$BASHRC_FILE"
     echo "✓ Added yolo alias to $BASHRC_FILE"
+fi
+
+if grep -Fxq "$EXPORT_OPENSPEC_TELEMETRY_LINE" "$BASHRC_FILE"; then
+    echo "✓ Telemetry control already exists in $BASHRC_FILE"
+else
+    echo "$EXPORT_OPENSPEC_TELEMETRY_LINE" >> "$BASHRC_FILE"
+    echo "✓ Added telemetry control to $BASHRC_FILE"
+fi
+
+if grep -Fxq "$EXPORT_DNT_LINE" "$BASHRC_FILE"; then
+    echo "✓ DNT control already exists in $BASHRC_FILE"
+else
+    echo "$EXPORT_DNT_LINE" >> "$BASHRC_FILE"
+    echo "✓ Added DNT control to $BASHRC_FILE"
 fi
 
 # Source bashrc to apply the alias in the current session
