@@ -8,17 +8,39 @@ $YELLOW = "$ESC[33m"
 $NC     = "$ESC[0m"
 
 # --- Status Helpers ---
-function Start-Step($msg) {
+function Start-Step {
+    param(
+        [string]$msg,
+        [switch]$NoNewLine
+    )
     Set-Variable -Name CURRENT_STEP -Value $msg -Scope Script
-    Write-Host "[....] $msg" -NoNewline
+    if ($NoNewLine) {
+        Write-Host "[....] $msg" -NoNewline
+    } else {
+        Write-Host "[....] $msg"
+    }
 }
 
 function End-Step($status) {
-    switch ($status) {
-        "ok"   { Write-Host "`r[$GREEN"  + "DONE$NC] $CURRENT_STEP" }
-        "fail" { Write-Host "`r[$RED"    + "FAIL$NC] $CURRENT_STEP" }
-        "skip" { Write-Host "`r[$YELLOW" + "SKIP$NC] $CURRENT_STEP" }
+    $CR = [char]13
+
+    $word  = switch ($status) {
+        "ok"   { "DONE" }
+        "fail" { "FAIL" }
+        "skip" { "SKIP" }
     }
+
+    $color = switch ($status) {
+        "ok"   { $GREEN }
+        "fail" { $RED }
+        "skip" { $YELLOW }
+    }
+
+    [Console]::Write($CR + "[")
+    [Console]::Write($color)
+    [Console]::Write($word)
+    [Console]::Write($NC)
+    [Console]::WriteLine("] $CURRENT_STEP")
 }
 
 # --- Step: Stop Ollama service ---
