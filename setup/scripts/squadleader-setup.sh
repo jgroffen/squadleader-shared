@@ -46,13 +46,14 @@ else
     echo ""
     echo "  git config --global submodule.recurse true"
     echo "  git config --global push.recurseSubmodules on-demand"
-    echo ""
+    echo "  git config --global core.editor \"vim\""
     read -p "Would you like to apply these changes? (y/n) " -n 1 -r
     echo
     if [[ $REPLY =~ ^[Yy]$ ]]; then
         git config --global submodule.recurse true
         git config --global push.recurseSubmodules on-demand
-        echo "✓ Git submodule configuration applied successfully"
+        git config --global core.editor "vim"
+        echo "✓ Git configuration applied successfully"
     else
         echo "ℹ Skipped git configuration. You can run the commands manually later"
     fi

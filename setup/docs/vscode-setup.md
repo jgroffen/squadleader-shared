@@ -1,11 +1,5 @@
 # VSCode Setup
 
-## Quick Start
-
-
-
-
-
 ## Installation
 
 To install vscode, browse to:
@@ -27,6 +21,18 @@ rm /tmp/<file>.deb
 - move the file to your /tmp folder
 - install vscode
 - remove the deb file post-install
+
+## Tips and Tricks
+
+I run Copilot CLI in a Terminal-In-Editor tab. One way to do this is to use the command pallette and search for `Terminal in editor`. I have made a new short-cut by using the command pallette to search for `open keyboard shortcuts` (or pressing  `CTRL`+`K` then `CT
+RL`+`S`) ... then searching for `Terminal in editor`. I am using:
+
+- `SHIFT`+`ALT`+`T`: Open a terminal in an editor tab
+
+## Useful VSCode Shortcuts
+
+- `CTRL`+`` ` `` or `CTRL`+`J`: Open a terminal
+- `CTRL`+`SHIFT`+`P`: Search the VSCode Command Pallette
 
 ## Recommended VSCode Extensions
 
