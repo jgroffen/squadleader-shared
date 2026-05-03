@@ -28,5 +28,5 @@ pnpm install -g typescript
 curl -fsSL https://raw.githubusercontent.com/continuedev/continue/main/extensions/cli/scripts/install.sh | bash
 
 # Useful service to resolve .local hostnames on the LAN, which the host vm is advertising
-sudo apt install avahi-daemon
+sudo apt install avahi-daemon avahi-utils
 sudo systemctl enable --now avahi-daemon
