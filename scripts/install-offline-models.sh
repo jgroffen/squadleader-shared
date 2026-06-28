@@ -125,7 +125,7 @@ install_model "gpt-oss:20b" "OpenAI GPT 20B" || true
 install_model "mistral-nemo:12b" "Mistral 12B" || true
 
 # shockingly good for it's size - fast and tiny
-install_model "phi4-mini" "Phi-4 Mini" || true
+install_model "phi4-mini:3.8b" "Phi-4 Mini 3.8B" || true
 
 echo "All tasks complete."
 
